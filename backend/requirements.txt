@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+asyncpg
+alembic
+pydantic-settings
+pyjwt
+argon2-cffi
+geoalchemy2
+scikit-learn
+joblib
+pytest
+httpx
+ruff
