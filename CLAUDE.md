@@ -32,7 +32,7 @@ Out of scope for now: parking-availability prediction and data collection, busin
 ## Git and pull requests
 
 - One feature per branch (`feature/...`), small commits, short imperative Slovak messages ("Pridaj komponent karty miesta"). Never push to `main`.
-- Every pull request is reviewed by one teammate. GitHub Copilot reviews too (it reads `.github/copilot-instructions.md`, which should mirror the rules in the CLAUDE.md files). Copilot's review does not replace the human one.
+- Every pull request is reviewed by one teammate. GitHub Copilot reviews too (it reads `.github/code-review-instructions.md`, which should mirror the rules in the CLAUDE.md files). Copilot's review does not replace the human one.
 - CI (`.github/workflows/ci.yml`) runs on every pull request and must be green before merge.
 - Never commit secrets. Use `.env` and `.env.example`. Anything a browser can read (variables starting with `VITE_`) is public.
 - Team process (roles, IDEs, branch protection, CODEOWNERS, deployment) is described in the handbook "ParkPoint: Team Repository Process and JetBrains Toolkit". If a rule here differs from it, ask the team instead of choosing silently.
