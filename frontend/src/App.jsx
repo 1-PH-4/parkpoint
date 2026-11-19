@@ -1,5 +1,5 @@
 
-import Map from "./Map";
+import Map from "./mapfeatures/components/map/Map.jsx";
 
 function App() {
     return (

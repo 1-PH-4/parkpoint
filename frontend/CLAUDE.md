@@ -1,50 +1,38 @@
-# ParkPoint — frontend
+# ParkPoint
 
-React web app for ParkPoint. Shared project rules (screens, language, git and PR workflow) are in the root `../CLAUDE.md`; read it first. The backend (FastAPI + PostgreSQL) is built separately; until it is ready, the frontend uses mock data.
+P2P marketplace for renting private and company parking spots in Košice (Slovakia). Web app, mobile-first, to be wrapped later with Capacitor for Google Play. Current goal: a high-quality prototype for the LAB IT Creativity competition (half-year presentation in February, finals in June). A team of 7 works in parallel, so consistency matters more than cleverness.
 
-## Stack
+## Repository layout
 
-- React + Vite, **plain JavaScript** (`.jsx` / `.js`, no TypeScript; the Vite template is `react`, not `react-ts`). No `tsc` in the build.
-- Tailwind CSS **4** with the Vite plugin `@tailwindcss/vite`. There is no `tailwind.config.js`; theme values live in `src/index.css`.
-- React Router for navigation
-- react-leaflet + OpenStreetMap tiles for the map. Import `leaflet/dist/leaflet.css` once in `src/mapfeatures/main.jsx`, fix the default marker icons (Vite breaks their paths), and remember Leaflet wants `[latitude, longitude]`. Default map center is Košice, `[48.7164, 21.2611]`. Use `100dvh`, not `100vh`, for full-height maps. The app stays a web app wrapped with Capacitor, so Leaflet stays; if it ever becomes React Native, the map must be replaced (react-leaflet does not run there).
-- No Google API key and no Google API calls until the team decides which Google API is needed and why (each has separate billing and key restrictions). Navigation to a spot is a plain Google Maps or Waze link and needs no key. Anything starting with `VITE_` is public in the browser, so never put a secret in it.
-- `fetch` for API calls (no axios, no TanStack Query yet)
-- Backend API: every route lives under `/api` (for example `GET /api/health`). The base URL comes from `VITE_API_URL`. In development, forward `/api` to the FastAPI server with `server.proxy` in `vite.config.js` instead of fighting CORS. Field names in API data are `snake_case` (FastAPI default); mock data uses the same names, so switching from mock to real is one change inside `src/api/`. Agree the JSON shape with the API owner before building on it.
-- The shared `.env` file lives in the repo root, not in `frontend/`. `vite.config.js` therefore sets `envDir:'..'`. Only variables starting with `VITE_` reach the browser.
-- Approved dependencies: `react`, `react-dom`, `react-router-dom`, `tailwindcss`, `@tailwindcss/vite`, `leaflet`, `react-leaflet`. Do NOT add any other dependency without asking first.
-
-## Project structure
+One repository (monorepo):
 
 ```
-frontend/
-  src/
-    api/          all backend calls live here; mock data in api/mock/
-    components/   generic reusable UI with no ParkPoint logic (Button, Chip, Input, ListRow, ...)
-    features/     one folder per domain area (map, spots, bookings, profile); holds that feature's components and hooks
-    pages/        one thin file per route; composes features and components
-    hooks/        custom hooks shared by more than one feature (useSpots, useAuth, ...)
-    lib/          small pure helpers (formatPrice, distance, strings.js, ...)
-    assets/       logo, images
+CLAUDE.md          this file: shared rules for everyone
+frontend/          React web app (has its own CLAUDE.md)
+backend/           FastAPI + PostgreSQL (will have its own CLAUDE.md)
 ```
 
-Where does a new file go? If it knows nothing about parking (a button), it goes to `components/`. If it is specific to one area (the map, a booking card), it goes to `features/<area>/`. If it is a whole screen reached by a URL, it goes to `pages/` and stays thin. Shared hooks go to `hooks/`, a hook used by one feature stays in that feature's folder.
+When you work inside `frontend/` or `backend/`, also follow the `CLAUDE.md` in that folder. Until the backend is ready, the frontend uses mock data. The API shape (field names, price as a number, ISO dates) is agreed between frontend and backend before either side builds on it; do not guess field names.
 
-## Code rules
+## Screens (scope)
 
-- Components are small and do one thing. If a file grows past ~150 lines, propose a split.
-- Prefer the simplest solution that works. No clever abstractions, no premature optimization.
-- No API calls or business logic inside JSX components: put them in `api/` and `hooks/`.
-- Every screen handles three states: loading, error, empty.
-- Mobile-first. Build for 390px width first, then scale up. Check every screen at 390px.
-- Semantic HTML, visible focus states, text contrast at least 4.5:1, touch targets at least 44px.
-- UI text (Slovak) lives in one dictionary file, `src/lib/strings.js`, never inline in components.
-- Prices are numbers in code and formatted in one helper (`lib/formatPrice`) as Slovak currency, e.g. `0,80 €` (use `Intl.NumberFormat('sk-SK', ...)`).
-- Do not store anything important in localStorage.
-- CI runs `npm ci` and `npm run build` on every pull request, so `package-lock.json` must be committed in sync with `package.json`, and the build must pass.
+Bottom navigation has exactly 3 tabs:
+1. Map (home): map with price pins and a bottom sheet. Tapping a pin opens Spot detail.
+2. Bookings: current, upcoming and past bookings.
+3. Profile: a long list that opens sub-screens (payment methods, my spots, my cars, settings, ...). Adding a spot lives under Profile > My spots; there the app suggests an ideal price (the only AI feature for now).
 
-## Workflow
+Out of scope for now: parking-availability prediction and data collection, business and legal topics. For the February demo, build Map, Spot detail and Bookings for real; from Profile build the list plus 2-3 sub-screens, the rest with mock data.
 
-- Commands (run inside `frontend/`): `npm run dev`, `npm run build`, `npm run lint`
-- Before saying a task is done: run lint and build, and report what you checked.
-- Git and PR rules are in the root `../CLAUDE.md`.
+## Language
+
+- Code, comments, identifiers, docs and prompts are in English.
+- Commit messages and pull request descriptions are in Slovak, following the team's PR template (`.github/pull_request_template.md`).
+- The only Slovak inside the product is UI text, which lives in one dictionary file in the frontend, never inline in components.
+
+## Git and pull requests
+
+- One feature per branch (`feature/...`), small commits, short imperative Slovak messages ("Pridaj komponent karty miesta"). Never push to `main`.
+- Every pull request is reviewed by one teammate. GitHub Copilot reviews too (it reads `.github/code-review-instructions.md`, which should mirror the rules in the CLAUDE.md files). Copilot's review does not replace the human one.
+- CI (`.github/workflows/ci.yml`) runs on every pull request and must be green before merge.
+- Never commit secrets. Use `.env` and `.env.example`. Anything a browser can read (variables starting with `VITE_`) is public.
+- Team process (roles, IDEs, branch protection, CODEOWNERS, deployment) is described in the handbook "ParkPoint: Team Repository Process and JetBrains Toolkit". If a rule here differs from it, ask the team instead of choosing silently.
