@@ -1,5 +1,5 @@
 
-import Map from "./mapfeatures/components/map/Map.jsx";
+import SpotMap from "./features/map/SpotMap.jsx";
 
 function App() {
     return (
@@ -8,7 +8,7 @@ function App() {
 
             </header>
 
-            <Map />
+            <SpotMap />
         </div>
     );
 }

@@ -68,7 +68,7 @@ function MapMover({ position }) {
     return null;
 }
 
-export default function Map() {
+export default function SpotMap() {
 
     const [inputValue, setInputValue] = useState("");
     const [suggestions, setSuggestions] = useState([]);
