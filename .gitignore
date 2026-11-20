@@ -1,5 +1,5 @@
 # secrets
-.env
+frontend/.env
 
 # JetBrains personal settings
 .idea/
