@@ -1,11 +1,5 @@
 
-import os
 from unittest.mock import AsyncMock
-
-os.environ.setdefault(
-    "DATABASE_URL",
-    "postgresql+asyncpg://test:test@localhost:5432/test",
-)
 
 from fastapi.testclient import TestClient
 from sqlalchemy.exc import SQLAlchemyError
