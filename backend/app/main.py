@@ -1,4 +1,6 @@
 
+from typing import Annotated
+
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy import text
 from sqlalchemy.exc import SQLAlchemyError
@@ -16,7 +18,7 @@ def health():
 
 
 @app.get("/api/health/db")
-async def health_db(db: AsyncSession = Depends(get_db)):
+async def health_db(db: Annotated[AsyncSession, Depends(get_db)]):
     try:
         await db.execute(text("SELECT 1"))
     except SQLAlchemyError:
