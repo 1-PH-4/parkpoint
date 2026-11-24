@@ -45,19 +45,19 @@ Zobraziť stav prístupu k polohe, upozorneniam, kamere a fotografiám. Umožni�
 Statické rozloženie. Horná lišta: vyhľadávanie adresy, výber dátumu a času a tlačidlo filtre. Mapa vypĺňa zvyšok obrazovky s pevnou výškou, neposúva sa a nerolujú po nej žiadne spodné karty. Značky parkovacích miest pre zvolený termín. Kliknutím na značku sa otvorí karta miesta ako prekrytie zo spodu. Filtre (dátum a čas, cena, vonkajšie alebo kryté miesto, spôsob vstupu, výškový limit, kapacita) sa otvoria z hornej lišty a výsledky aktualizujú mapu. Tlačidlo „Použiť" uloží filtre, tlačidlo „Vymazať" obnoví základné nastavenie. Na mape je tlačidlo „Predikcia", ktoré zapne a vypne vrstvu farebných zón podľa dostupnosti.
 
 ### 7. Rezervácie (záložka režimu zákazníka)
-Obsahuje tri podsekcie: aktívne (prebiehajúce a budúce rezervácie), história (ukončené a zrušené) a obľúbené miesta (vyberajú sa spomedzi predchádzajúcich rezervácií). Pri každej rezervácii miesto, termín, cena a skutočný stav. Tlačidlo „Zobraziť detail" otvorí konkrétnu rezerváciu. Umožniť vytvorenie novej rezervácie rovnakého miesta.
+Obsahuje dve podsekcie: aktívne (prebiehajúce a budúce rezervácie) a história (ukončené a zrušené). Obľúbené miesta (vyberajú sa spomedzi predchádzajúcich rezervácií) sa zobrazujú navrchu histórie. Pri každej rezervácii miesto, termín, cena a skutočný stav. Tlačidlo „Zobraziť detail" otvorí konkrétnu rezerváciu. Umožniť vytvorenie novej rezervácie rovnakého miesta.
 
 ### 8. Prehľad (hlavná záložka režimu majiteľa)
 Prvá obrazovka po prepnutí do režimu majiteľa. Obsahuje súhrn príjmov (dnes, tento týždeň, tento mesiac) s malým grafom, aktuálne obsadené miesta (ktoré vozidlo, dokedy), dnešné nadchádzajúce rezervácie, počet otvorených prípadov s odkazom na zoznam a upozornenia s nedokončenými úlohami (napríklad „Dokončite registráciu majiteľa", „Stripe Connect nedokončený", „Miesto bez fotografií"). Ak dodatočná registrácia nie je dokončená, zobrazuje baner „Dokončite registráciu majiteľa".
 
 ### 9. Moje miesta (záložka režimu majiteľa)
-Vlastné ponuky s fotografiou, adresou, cenou a aktuálnym stavom (aktívne, pozastavené, čakajúce na doplnenie). Pridávanie, úprava a odstraňovanie inzerátov. Dočasné pozastavenie ponuky. Pri rozkliknutí konkrétneho miesta prehľad jeho rezervácií (budúce, prebiehajúce, história), zárobky z tohto miesta a tlačidlo „Nahlásiť prekročenie času" pri aktuálnej alebo nedávnej rezervácii. Ak dodatočná registrácia nie je dokončená, zobrazuje baner „Dokončite registráciu majiteľa".
+Vlastné ponuky s fotografiou, adresou, cenou a aktuálnym stavom (aktívne, pozastavené, čakajúce na doplnenie). Pridávanie, úprava a odstraňovanie inzerátov. Dočasné pozastavenie celej ponuky a blokovanie konkrétnych časov (pozri Upraviť parkovacie miesto). Pri rozkliknutí konkrétneho miesta prehľad jeho rezervácií (budúce, prebiehajúce, história), zárobky z tohto miesta a tlačidlo „Nahlásiť prekročenie času" pri aktuálnej alebo nedávnej rezervácii. Ak dodatočná registrácia nie je dokončená, zobrazuje baner „Dokončite registráciu majiteľa".
 
 ### 10. Môj profil
 Zobraziť meno, fotografiu, e-mail a telefón (ak je doplnený). Hore veľký viditeľný slide button na prepínanie medzi režimom zákazníka a režimom majiteľa. Spoločné položky profilu (v oboch režimoch): upraviť profil, moje vozidlá, platobné metódy, nastavenia a bezpečnosť, zoznam prípadov, notifikácie, pomoc a reklamácia, podmienky používania, ochrana osobných údajov, o aplikácii, odhlásiť sa. V režime majiteľa sa k nim pridávajú samostatné položky navyše, priamo viditeľné bez obalovania: platby a výplaty, obchodné údaje, vyhlásenie poskytovateľa miesta (posledná prijatá verzia a dátum), notifikácie majiteľa (nastavenie samostatné od zákazníckych) a daňové nastavenia.
 
 ### 11. Karta miesta na mape
-Vyskakovacie prekrytie zo spodu na hlavnej mape. Obsahuje fotografiu, okruh adresy (približná poloha v okruhu 100 m, aby sa predišlo parkovaniu bez zaplatenia), cenu, vzdialenosť a odhad chôdze. Tlačidlá: pridať do obľúbených, otvoriť detail, rezervovať.
+Vyskakovacie prekrytie zo spodu na hlavnej mape. Obsahuje fotografiu, okruh adresy (približná poloha v okruhu 100 m, aby sa predišlo parkovaniu bez zaplatenia), cenu a vzdialenosť. Vzdialenosť je vzdušnou čiarou od miesta, kde sa zákazník práve nachádza. Čas chôdze sa nezobrazuje. Tlačidlá: pridať do obľúbených, otvoriť detail, rezervovať.
 
 ### 12. Detailné informácie o mieste
 Fotografie, približná poloha v okruhu 100 m s informáciou, že presná poloha sa sprístupní po zaplatení a potvrdení rezervácie, popis, cena, dostupnosť, rozmery a obmedzenia vozidla, spôsob vstupu, výškový limit a prípadný uzavretý areál. Poskytovateľ a jeho postavenie (obchodník alebo súkromná osoba). Tlačidlo „Rezervovať miesto" otvorí výber termínu. Pri ponuke je tlačidlo „Nahlásiť inzerát".
@@ -66,19 +66,19 @@ Fotografie, približná poloha v okruhu 100 m s informáciou, že presná poloha
 Výber dátumu, začiatku a konca parkovania. Termín zostáva podľa filtra, dá sa upraviť. Vybrať vozidlo z vozidiel uložených v profile alebo pridať nové. Priebežne počítať celkovú cenu vrátane poplatkov. Umožniť vybrať iba dostupný termín. Po potvrdení prejsť na súhrn a platbu.
 
 ### 14. Súhrn a platba
-Zobrazenie miesta, poskytovateľa a jeho postavenia, približnej polohy s informáciou o sprístupnení presnej polohy po zaplatení, termínu, EČV, konečnej ceny s rozpisom poplatkov (cena miesta, poplatok ParkPoint, dane), podmienok storna, pravidiel predĺženia a prekročenia času a informácie o odstúpení od zmluvy. Pred platbou tri samostatné, vopred nezaškrtnuté súhlasy: s podmienkami používania, so zmluvnou pokutou 10 EUR za prekročenie rezervácie o viac ako 15 minút a so skorším začatím služby spolu s poučením o strate práva na odstúpenie po úplnom poskytnutí služby. Bez nich sa v objednávke nedá pokračovať. Vybrať platobnú metódu (prípadne pridať novú cez Stripe) a potvrdiť objednávku tlačidlom „Objednávka s povinnosťou platby". Po úspešnom dokončení zobraziť potvrdenie s číslom rezervácie a odoslať ho aj e-mailom. Pri chybe umožniť opakovanie platby bez vytvorenia duplicitnej rezervácie.
+Zobrazenie miesta, poskytovateľa a jeho postavenia, približnej polohy s informáciou o sprístupnení presnej polohy po zaplatení, termínu, EČV, konečnej ceny s rozpisom poplatkov (cena miesta, poplatok ParkPoint, dane), podmienok storna, pravidiel predĺženia a prekročenia času a informácie o odstúpení od zmluvy. Pred platbou tri samostatné, vopred nezaškrtnuté súhlasy: s podmienkami používania, so zmluvnou pokutou 10 EUR za prekročenie rezervácie o viac ako 15 minút a so skorším začatím služby spolu s poučením o strate práva na odstúpenie po úplnom poskytnutí služby. Bez nich sa v objednávke nedá pokračovať. Vybrať platobnú metódu (prípadne pridať novú cez Stripe) a potvrdiť objednávku tlačidlom „Zaplatiť". Po úspešnom dokončení zobraziť potvrdenie s číslom rezervácie a odoslať ho aj e-mailom. Pri chybe umožniť opakovanie platby bez vytvorenia duplicitnej rezervácie.
 
 ### 15. Detail rezervácie
-Zobrazí sa po zaplatení. Obsahuje fotografiu, presnú adresu, termín, vozidlo, zaplatenú sumu, stav a pokyny na vstup. Prípadný vstupný kód, ak ho majiteľ zadal; pri jeho zmene sa kód aktualizuje a zákazník dostane upozornenie. Tlačidlo „Navigovať na miesto" otvorí navigáciu. Tlačidlo „Upraviť" najprv overí dostupnosť a prípadnú zmenu ceny. Prístup k dokladu. Možnosť predĺženia rezervácie, ak je termín ešte voľný; pred predĺžením sa zobrazí doplatok a vyžiada sa výslovné potvrdenie. V spodnej časti detailu sú tri samostatné tlačidlá: „Stornovať rezerváciu" (od potvrdenia najneskôr do 5 minút po dohodnutom začiatku), „Odstúpiť od zmluvy" (zákonné 14-dňové právo) a „Reklamácia / Nahlásiť problém" (vytvorí prípad).
+Zobrazí sa po zaplatení. Obsahuje fotografiu, presnú adresu, termín, vozidlo, zaplatenú sumu, stav a pokyny na vstup. Prípadný vstupný kód, ak ho majiteľ zadal, sa zobrazí až 5 minút pred začiatkom rezervácie; ak zákazník zaplatil po uplynutí lehoty na bezplatné storno, zobrazí sa hneď po zaplatení. Zákazník dostane upozornenie, že kód je k dispozícii; text kódu upozornenie neobsahuje. Zobrazený kód sa uloží do pamäte aplikácie. Pri zmene kódu po jeho sprístupnení sa kód aktualizuje a zákazník dostane upozornenie. Tlačidlo „Navigovať na miesto" otvorí Google Maps s presnou polohou miesta; vlastná navigácia v aplikácii nie je. Tlačidlo „Upraviť" najprv overí dostupnosť a prípadnú zmenu ceny. Prístup k dokladu. Možnosť predĺženia rezervácie, ak je termín ešte voľný; pred predĺžením sa zobrazí doplatok a vyžiada sa výslovné potvrdenie. V spodnej časti detailu sú tri samostatné tlačidlá: „Stornovať rezerváciu" (najneskôr X minút pred začiatkom rezervácie, hodnota X je v otvorených bodoch), „Odstúpiť od zmluvy" (zákonné 14-dňové právo) a „Reklamácia / Nahlásiť problém" (vytvorí prípad).
 
 ### 16. Storno rezervácie
-Pred stornom okno s potvrdením: zostávajúci čas na bezplatné storno a výška vrátenej sumy (celá uhradená suma vrátane poplatku ParkPoint do 14 dní). Tlačidlá „Stornovať rezerváciu" a „Späť". Po uplynutí lehoty rezervácia pokračuje; samostatné odstúpenie a reklamácia sú dostupné cez samostatné tlačidlá.
+Bezplatné storno je možné najneskôr X minút pred začiatkom rezervácie. Pred stornom okno s potvrdením: zostávajúci čas na bezplatné storno a výška vrátenej sumy (celá uhradená suma vrátane poplatku ParkPoint do 14 dní). Tlačidlá „Stornovať rezerváciu" a „Späť". Po uplynutí lehoty rezervácia pokračuje; samostatné odstúpenie a reklamácia sú dostupné cez samostatné tlačidlá.
 
 ### 17. Odstúpenie od zmluvy
 Formulár zobrazený v spodnej časti detailu rezervácie, oddelený od storna a reklamácie. Rovnaký formulár je dostupný aj v nastaveniach účtu pre zmluvu o používaní účtu. Umožňuje uviesť alebo potvrdiť meno a priezvisko, identifikovať zmluvu a zadať e-mail na potvrdenie. Tlačidlo „Potvrdiť odstúpenie od zmluvy". Po odoslaní potvrdenie e-mailom.
 
 ### 18. Notifikácie
-Zobrazovať potvrdenie rezervácie, výsledok platby, pripomienky parkovania, zmenu stavu prípadu a ďalšie správy. Rozlišovať prečítané a neprečítané. Kliknutím otvoriť súvisiacu rezerváciu alebo informáciu. Umožniť označiť všetko ako prečítané.
+Zobrazovať potvrdenie rezervácie, výsledok platby, pripomienky parkovania, upozornenie na sprístupnený vstupný kód, zmenu stavu prípadu a ďalšie správy. Rozlišovať prečítané a neprečítané. Kliknutím otvoriť súvisiacu rezerváciu alebo informáciu. Umožniť označiť všetko ako prečítané.
 
 ### 19. Upraviť profil
 Upraviť meno, priezvisko, e-mail a telefón. Skontrolovať správnosť údajov a uložiť zmeny. Pri zmene kontaktného údaja vyžiadať jeho overenie. Prechod na zmenu profilovej fotografie.
@@ -99,45 +99,42 @@ Uložené metódy s maskovaným číslom karty a označením predvolenej metódy
 Pridať kartu cez platobnú bránu Stripe a zobraziť výsledok overenia. Google Pay a Apple Pay podľa skutočnej podpory. Údaje o karte spracúva platobný poskytovateľ.
 
 ### 25. Nastavenia a bezpečnosť
-Otvorenie zmeny hesla, dvojfaktorového overenia, ochrany údajov, povolení aplikácie, podmienok používania a informácií o aplikácii. Funkcia „Odstúpiť od zmluvy" pre zmluvu o používaní účtu. Tlačidlo „Odhlásiť sa" ukončí prihlásenie a otvorí úvodnú obrazovku.
+Otvorenie zmeny hesla, ochrany údajov, povolení aplikácie, podmienok používania a informácií o aplikácii. Funkcia „Odstúpiť od zmluvy" pre zmluvu o používaní účtu. Tlačidlo „Odhlásiť sa" ukončí prihlásenie a otvorí úvodnú obrazovku.
 
 ### 26. Zmeniť heslo
 Aktuálne heslo, nové heslo a jeho potvrdenie. Overiť správnosť a zhodu údajov. Po úspešnej zmene zobraziť potvrdenie.
 
-### 27. Dvojfaktorové overenie
-Zobraziť, či je zapnuté. Umožniť jeho nastavenie, overenie kódom a bezpečné vypnutie. Konkrétny spôsob overovania treba vybrať pred realizáciou.
-
-### 28. Ochrana osobných údajov
+### 27. Ochrana osobných údajov
 Zobraziť informácie o spracúvaní údajov. Umožniť správu voliteľných súhlasov a odoslanie žiadosti týkajúcej sa osobných údajov alebo zrušenia účtu.
 
-### 29. Podmienky používania
+### 28. Podmienky používania
 Otvoria sa VOP s dátumom účinnosti a možnosťou ich uloženia. Z rezervácie sprístupniť verziu podmienok platnú pri jej vytvorení.
 
-### 30. O aplikácii ParkPoint
+### 29. O aplikácii ParkPoint
 Stručný opis aplikácie, jej verzia, prevádzkovateľ a kontakt na podporu.
 
-### 31. Pomoc a reklamácia
+### 30. Pomoc a reklamácia
 Vybrať rezerváciu, typ problému, doplniť opis a fotografie. Odoslať požiadavku, potvrdiť jej prijatie a zobrazovať stav riešenia. Pri obsadenom alebo neprístupnom mieste ponúknuť rýchly kontakt na podporu. Podanie z detailu rezervácie („Reklamácia / Nahlásiť problém") vytvorí prípad.
 
-### 32. Pridať parkovacie miesto
-Adresa a presná poloha (dočasná mapa v rámci formulára), fotografie (miesto, jeho označenie, vjazd, dopravné značky, prípadné dodatkové tabuľky), typ miesta (kryté alebo vonkajšie), spôsob vstupu z pevného zoznamu (voľný vstup, vstup na kód, cez vrátnika alebo recepciu, závora, kľúč alebo čip, rozpoznávanie EČV, registrácia návštevy), časové a technické obmedzenia prístupu, kapacita, hodinová cena a dostupnosť. Aplikácia navrhne cenu ±20 % oproti mestskému parkovaniu v okolí; majiteľ si cenu môže vždy sám upraviť. Pri dostupnosti uviesť čas, keď je miesto voľné, s možnosťou nastaviť napríklad každý pracovný deň. Pri vstupe na kód zadať kód do samostatného neverejného poľa; kód sa zákazníkovi zobrazí až po zaplatení v detaile rezervácie. Pri ostatných spôsoboch vstupu okrem voľného vstupu doplniť pokyny na vstup a výjazd. Pred zverejnením zobraziť províziu ParkPoint, poplatok platobného partnera a čistú sumu pre majiteľa. Potvrdiť vyhlásenie poskytovateľa miesta a uviesť jeho postavenie (obchodník alebo súkromná osoba). Po odoslaní sa ponuka zverejní okamžite, bez schvaľovania.
+### 31. Pridať parkovacie miesto
+Adresa a presná poloha (dočasná mapa v rámci formulára), fotografie (miesto, jeho označenie, vjazd, dopravné značky, prípadné dodatkové tabuľky), typ miesta (kryté alebo vonkajšie), spôsob vstupu z pevného zoznamu (voľný vstup, vstup na kód, cez vrátnika alebo recepciu, závora, kľúč alebo čip, rozpoznávanie EČV, registrácia návštevy), časové a technické obmedzenia prístupu, kapacita, hodinová cena a dostupnosť. Aplikácia navrhne cenu ±20 % oproti mestskému parkovaniu v okolí; majiteľ si cenu môže vždy sám upraviť. Pri dostupnosti uviesť čas, keď je miesto voľné, s možnosťou nastaviť napríklad každý pracovný deň. Pri vstupe na kód zadať kód do samostatného neverejného poľa; kód sa zákazníkovi zobrazí v detaile rezervácie až 5 minút pred začiatkom rezervácie (pri zaplatení po uplynutí lehoty na bezplatné storno hneď po zaplatení). Pri ostatných spôsoboch vstupu okrem voľného vstupu doplniť pokyny na vstup a výjazd. Pred zverejnením zobraziť províziu ParkPoint, poplatok platobného partnera a čistú sumu pre majiteľa. Potvrdiť vyhlásenie poskytovateľa miesta a uviesť jeho postavenie (obchodník alebo súkromná osoba). Po odoslaní sa ponuka zverejní okamžite, bez schvaľovania.
 
-### 33. Upraviť parkovacie miesto
-Načítať existujúce údaje a umožniť zmenu fotografie, opisu, ceny a dostupnosti. Pri uložení skontrolovať kolízie s rezerváciami. Zmeny nesmú automaticky meniť cenu ani podmienky už potvrdených rezervácií. Pri zmene vstupného kódu sa kód aktualizuje v potvrdených rezerváciách miesta a dotknutí zákazníci dostanú upozornenie.
+### 32. Upraviť parkovacie miesto
+Načítať existujúce údaje a umožniť zmenu fotografie, opisu, ceny a dostupnosti. Pri uložení skontrolovať kolízie s rezerváciami. Zmeny nesmú automaticky meniť cenu ani podmienky už potvrdených rezervácií. Pri zmene vstupného kódu sa kód aktualizuje v potvrdených rezerváciách miesta a dotknutí zákazníci, ktorým už bol kód sprístupnený, dostanú upozornenie. Majiteľ môže zablokovať konkrétny časový úsek (od, do, aj cez viac dní), v ktorom miesto nebude dostupné, bez zmeny opakovanej dostupnosti; napríklad jeden konkrétny štvrtok z pravidelnej štvrtkovej dostupnosti. Blok sa nedá vytvoriť na čas, v ktorom je už potvrdená rezervácia; aplikácia ukáže kolidujúce rezervácie a blok neuloží. Blok sa dá zrušiť. Zablokovaný čas sa zákazníkom nezobrazuje ako dostupný. Blok sa líši od dočasného pozastavenia, ktoré vypne celú ponuku.
 
-### 34. Dodatočná registrácia majiteľa (sprievodca)
+### 33. Dodatočná registrácia majiteľa (sprievodca)
 Otvorí sa pri prvom prepnutí do režimu majiteľa alebo z banera „Dokončite registráciu majiteľa" v Prehľade a v Moje miesta. Kroky: (1) postavenie, teda súkromná osoba alebo obchodník; (2) údaje podľa postavenia, teda pre obchodníka obchodné meno, IČO, DIČ, IČ DPH ak pridelené a sídlo, pre súkromnú osobu adresa trvalého pobytu; (3) telefón, ak nie je v profile; (4) Stripe Connect s overením totožnosti a platobných údajov (externý flow, dá sa dokončiť neskôr); (5) všeobecné prijatie vyhlásenia poskytovateľa miesta. Každý krok sa dá preskočiť a doplniť neskôr v profile. Nedokončená registrácia blokuje zverejnenie miesta a výplatu, ostatné funkcie zákazníka zostávajú dostupné. Pri pridávaní každého miesta sa vyhlásenie potvrdzuje znova s konkrétnymi údajmi daného miesta.
 
-### 35. Platby a výplaty
+### 34. Platby a výplaty
 Prístupné z Prehľadu a z Profilu. Stav Stripe Connect (prepojený, nedokončené overenie, pozastavený), zoznam výplat (dátum, suma, stav), zoznam transakcií (jednotlivé rezervácie s províziou a čistou sumou), odkaz na externý dashboard Stripe. Výplata sa zadá do siedmich pracovných dní po skončení parkovania.
 
-### 36. Zoznam prípadov
+### 35. Zoznam prípadov
 Prístupný z profilu v oboch režimoch. Filter: otvorené, čaká na odpoveď, uzavreté. Pri každom prípade typ (reklamácia, prekročenie času), rezervácia, druhá strana, dátum založenia a stav.
 
-### 37. Detail prípadu
+### 36. Detail prípadu
 Rezervácia, ku ktorej sa prípad viaže. Opis a prílohy (fotografie). Stav. Výmena správ medzi stranami v chronologickom poradí s možnosťou pridať správu a fotografiu. Pri nahlásenom prekročení času má zákazník najmenej 14 dní od doručenia rozpisu nároku na vyjadrenie; pokuta sa nestiahne z karty bez jeho osobitnej autorizácie.
 
-### 38. Nahlásiť prekročenie času
+### 37. Nahlásiť prekročenie času
 Dialóg vyvolaný z detailu konkrétnej rezervácie v Moje miesta. Opis situácie, čas zistenia, fotografia vozidla na mieste, prípadne skutočný čas odchodu, ak je známy. Neznámy čas odchodu sa nesmie uvádzať ako preukázaný. Odoslanie založí prípad.
 
 ## Spoločné fungovanie aplikácie
@@ -147,7 +144,7 @@ Dialóg vyvolaný z detailu konkrétnej rezervácie v Moje miesta. Opis situáci
 - Dostupnosť a cena sa znova overia pred dokončením rezervácie. Systém nikdy nepotvrdí viac rezervácií, než je kapacita miesta.
 - Potvrdená budúca rezervácia, práve prebiehajúce parkovanie, ukončená rezervácia a storno musia mať odlišné stavy a vlastný text.
 - Potvrdenia a zmluvné oznámenia sa doručujú e-mailom; upozornenia v aplikácii a push notifikácie sú doplnkové a nenahrádzajú e-mail.
-- Vstupné pokyny, kód a kontakty v detaile potvrdenej rezervácie musia byť dostupné a čitateľné aj bez pripojenia.
+- Vstupné pokyny, kód a kontakty v detaile potvrdenej rezervácie musia byť dostupné a čitateľné aj bez pripojenia; kód od okamihu jeho sprístupnenia.
 - Jazyk aplikácie je slovenský, časové pásmo Europe/Bratislava vrátane sezónnej zmeny času.
 - Cena sa vždy zobrazuje s DPH, s rozpisom poplatkov pred platbou.
 - Pri každej ponuke zákazník pred objednaním vidí, či je poskytovateľ obchodník alebo súkromná osoba.
@@ -163,20 +160,21 @@ Dialóg vyvolaný z detailu konkrétnej rezervácie v Moje miesta. Opis situáci
 
 1. Zákazník sa prihlási alebo si vytvorí účet. Po vytvorení profilu aplikácia požiada o povolenia. Ak nepovolí polohu, môže adresu zadať ručne.
 2. Na hlavnej mape zadá lokalitu, dátum a čas parkovania. Podľa potreby použije filtre. Na mape tlačidlom môže zapnúť vrstvu Predikcia a pozrieť si, v ktorých lokalitách je viac voľných miest.
-3. Klikne na značku na mape. Otvorí sa karta s fotografiou, okruhom adresy (100 m, aby sa predišlo parkovaniu bez zaplatenia), cenou a vzdialenosťou. Môže si pozrieť detailné informácie alebo miesto uložiť medzi obľúbené.
+3. Klikne na značku na mape. Otvorí sa karta s fotografiou, okruhom adresy (100 m, aby sa predišlo parkovaniu bez zaplatenia), cenou a vzdialenosťou od svojej polohy. Môže si pozrieť detailné informácie alebo miesto uložiť medzi obľúbené.
 4. Klikne na „Rezervovať miesto". Skontroluje termín prevzatý z filtra, prípadne ho upraví. Vyberie uložené vozidlo alebo zadá nové. Aplikácia overí dostupnosť a vypočíta cenu.
-5. Na obrazovke súhrnu skontroluje miesto, termín, EČV, konečnú cenu a podmienky storna. Zaškrtne tri samostatné súhlasy (s VOP, so zmluvnou pokutou a so skorším začatím služby). Vyberie platobnú metódu a potvrdí objednávku tlačidlom „Objednávka s povinnosťou platby".
+5. Na obrazovke súhrnu skontroluje miesto, termín, EČV, konečnú cenu a podmienky storna. Zaškrtne tri samostatné súhlasy (s VOP, so zmluvnou pokutou a so skorším začatím služby). Vyberie platobnú metódu a potvrdí objednávku tlačidlom „Zaplatiť".
 6. Po úspešnom dokončení sa zobrazí potvrdenie. Rezervácia bude dostupná v záložke Rezervácie a potvrdenie príde e-mailom.
-7. V detaile rezervácie si pozrie presnú adresu, pokyny na vstup a prípadný vstupný kód. Kliknutím na „Navigovať na miesto" otvorí navigáciu.
+7. V detaile rezervácie si pozrie presnú adresu a pokyny na vstup. Prípadný vstupný kód sa zobrazí 5 minút pred začiatkom rezervácie a notifikácia ho na to upozorní. Kliknutím na „Navigovať na miesto" otvorí Google Maps s presnou polohou miesta.
 8. Počas parkovania vidí v záložke Rezervácie svoju aktuálnu rezerváciu a jej platnosť. Po skončení ju nájde v histórii.
 
 **Alternatívne vetvy:**
 - Termín nie je dostupný: zákazník vyberie iný termín alebo miesto.
 - Platba zlyhá: môže ju zopakovať bez vytvorenia duplicitnej rezervácie.
-- Storno od potvrdenia najneskôr do 5 minút po začiatku rezervácie: otvorí detail, zvolí „Stornovať rezerváciu" a potvrdí. Vráti sa mu celá zaplatená suma.
+- Storno najneskôr X minút pred začiatkom rezervácie: otvorí detail, zvolí „Stornovať rezerváciu" a potvrdí. Vráti sa mu celá zaplatená suma.
 - Zákazník chce zrušiť po uplynutí lehoty na bezplatné storno: v detaile rezervácie zvolí „Odstúpiť od zmluvy" (zákonné 14-dňové právo).
 - Miesto je obsadené alebo neprístupné: zákazník otvorí „Reklamácia / Nahlásiť problém" a založí prípad.
-- Majiteľ zmení vstupný kód: zákazník dostane upozornenie a nový kód vidí v detaile rezervácie.
+- Zákazník zaplatí po uplynutí lehoty na bezplatné storno: bezplatné storno už nie je možné a vstupný kód (ak existuje) sa zobrazí hneď po zaplatení.
+- Majiteľ zmení vstupný kód: zákazník, ktorému bol kód už sprístupnený, dostane upozornenie a nový kód vidí v detaile rezervácie.
 - Zákazník chce parkovať dlhšie: v detaile rezervácie zvolí predĺženie, ak je termín voľný; skontroluje doplatok a výslovne ho potvrdí.
 
 ### Scenár 2: Majiteľ pridá parkovacie miesto a spravuje jeho prenájom
@@ -193,7 +191,7 @@ Dialóg vyvolaný z detailu konkrétnej rezervácie v Moje miesta. Opis situáci
 6. Určí, kedy je miesto voľné. Môže nastaviť aj opakovanie, napríklad dostupnosť každý pracovný deň.
 7. Pred zverejnením vidí províziu ParkPoint, poplatok platobného partnera a čistú sumu, ktorú dostane. Potvrdí vyhlásenie poskytovateľa miesta a odošle ponuku. Ponuka sa zverejní okamžite, bez schvaľovania.
 8. Keď si niekto miesto rezervuje, majiteľ dostane upozornenie. V Prehľade vidí dnešné rezervácie, aktuálne obsadené miesta a súhrn príjmov.
-9. V Moje miesta môže miesto upraviť, dočasne pozastaviť alebo vymazať. Pri rozkliknutí konkrétneho miesta vidí prehľad jeho rezervácií a zárobky.
+9. V Moje miesta môže miesto upraviť, dočasne pozastaviť, zablokovať konkrétny čas alebo vymazať. Pri rozkliknutí konkrétneho miesta vidí prehľad jeho rezervácií a zárobky.
 10. Pre vyplatenie odmeny má pripojený účet cez Stripe Connect s overenou totožnosťou a platobnými údajmi. Výplatu dostane do siedmich pracovných dní po skončení parkovania.
 
 **Alternatívne vetvy:**
@@ -201,11 +199,12 @@ Dialóg vyvolaný z detailu konkrétnej rezervácie v Moje miesta. Opis situáci
 - Úprava koliduje s rezerváciou: aplikácia kolíziu skontroluje. Zmena nesmie automaticky meniť cenu ani podmienky už potvrdených rezervácií.
 - Zákazník prekročí čas rezervácie o viac ako 15 minút: majiteľ pri príslušnej rezervácii nahlási prekročenie a priloží fotografiu vozidla. Otvorí sa prípad; zákazník má najmenej 14 dní na vyjadrenie a pokuta sa z karty nestiahne bez jeho osobitnej autorizácie.
 - Majiteľ zmení vstupný kód: zmenu zadá v úprave miesta a potvrdené rezervácie dostanú nový kód.
+- Majiteľ chce jednorazovo vypnúť časť opakovanej dostupnosti (napríklad jeden štvrtok z pravidelnej štvrtkovej dostupnosti): v úprave miesta zablokuje konkrétny časový úsek, pravidelná dostupnosť zostane nezmenená. Ak sa blokovaný čas prekrýva s potvrdenou rezerváciou, aplikácia ukáže kolíziu a blok neuloží.
 
 ## Otvorené body
 
-1. **Čas zverejnenia presnej polohy a vstupného kódu.** VOP ich sprístupnia ihneď po zaplatení, ale bezplatné storno trvá do 5 minút po začiatku rezervácie. Zákazník tak môže zaplatiť, zistiť kód, stornovať a dostať peniaze späť.
+1. **Čas bezplatného storna.** Hodnota X (minúty pred začiatkom rezervácie). Musí byť aspoň 5, pretože vstupný kód sa sprístupňuje 5 minút pred začiatkom; inak by si zákazník mohol kód pozrieť a ešte bezplatne stornovať.
 2. **Výška provízie ParkPoint.** Potrebná pre rozpis ceny zákazníka aj pre prehľad majiteľa pred zverejnením.
 3. **Či vôbec majú byť na hlavnej mape zoznamy alebo tlačidlá „Najbližšie" a „Najlepší pomer ceny a vzdialenosti".** Ak áno, kde a v akej forme.
 4. **Predikcia.** Definícia zón (mestské časti alebo mriežka) a zdroj cien mestského parkovania pre výpočet ±20 %.
-5. **Spôsob dvojfaktorového overenia** (TOTP, SMS alebo iný).
+5. **Vzdialenosť bez polohy.** Čo sa zobrazí na karte miesta, ak zákazník nepovolil polohu.

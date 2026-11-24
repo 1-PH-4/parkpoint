@@ -19,3 +19,11 @@ The app opens at http://localhost:5173.
 - `npm run build`: production build into `dist/`
 - `npm run lint`: run Oxlint
 - `npm run preview`: serve the production build locally
+
+## Environment
+
+Variables come from `frontend/.env` (see `.env.example`). After changing `.env`, restart `npm run dev`. After `git pull`, run `npm install` if `package.json` changed.
+
+## Design and specification
+
+Appearance rules are in `design.md` in this folder. What each screen does is in `../docs/specification.md`.

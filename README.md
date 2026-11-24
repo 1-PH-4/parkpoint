@@ -7,7 +7,8 @@ P2P marketplace for renting private and company parking spots in Košice, Slovak
 ```
 backend/     FastAPI + PostgreSQL (PostGIS)
 frontend/    React web app (JavaScript, Tailwind 4, Leaflet)
-.github/     CI, PR template, CODEOWNERS
+.github/     CI, PR template, CODEOWNERS, Copilot instructions
+docs/                specification, setup guide, team
 docker-compose.yml   local database
 ```
 
@@ -20,5 +21,8 @@ docker-compose.yml   local database
 
 ## Docs
 
-- `CLAUDE.md`: shared team rules (screens, language, git and PR workflow). `frontend/CLAUDE.md` adds the frontend rules.
-- `TEAM.md`: team members.
+- `docs/specification.md`: what the product does (screens, rules, user flows). Describes the final product, the MVP is not defined yet.
+- `frontend/design.md`: visual design (colors, type, components, states).
+- `CLAUDE.md`: shared team rules (language, git and PR workflow). `frontend/CLAUDE.md` and `backend/CLAUDE.md` add the rules for each part.
+- `docs/SETUP.md`: first-time setup for new team members.
+- `docs/TEAM.md`: team members.
