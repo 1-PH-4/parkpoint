@@ -1,7 +1,11 @@
-FIKII-Backend
-MAREK-Machine learning + Terms of service a celkovo pravna stranka projektu
-TOMAS-Frontend, popripade aj backend
-KOCIK+DAT- databazy
-MICHAL- Mapy
-PETKO- Hosting
-RADKA- Design UI/UX
+# Tím
+
+| Meno| GitHub | Zodpovednosť |
+|-----------------|--------|--------------|
+| TOMAS| @TomasGrusovsky | Frontend a dizajn |
+| FIKI| @ZemiakovyPudingg | Backend |
+| KOČÍ | @DingusBinguss | Backend a databázy |
+| MAREK| @marekhq | Machine learning, VOP a celková právna stránka projektu |
+| PETKO| @1-PH-4 | Hosting a vlastník repozitára |
+| MICHAL| @MisoMajlath | Mapy |
+| RADKA| bez GitHubu | Logo a prezentácia |

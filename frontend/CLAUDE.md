@@ -1,18 +1,34 @@
-# ParkPoint — frontend
+# ParkPoint: frontend
 
-React web app for ParkPoint. Shared project rules (screens, language, git and PR workflow) are in the root `../CLAUDE.md`; read it first. The backend (FastAPI + PostgreSQL) is built separately; until it is ready, the frontend uses mock data.
+React web app for ParkPoint. Shared project rules (what to build, language, git and PR workflow) are in the root `../CLAUDE.md`; read it first. The backend (FastAPI + PostgreSQL) is built separately; until it is ready, the frontend uses mock data.
+
+## Read before you build
+
+- `design.md` (this folder) is the single source of truth for appearance: tokens, type, components, states and content style. Read it before writing any UI.
+- `../docs/specification.md` is the source of truth for what each screen does. Where it and `design.md` disagree, the specification wins and the gap is logged under Open questions in `design.md`.
+- If neither document has a rule for something, say so and propose one instead of improvising.
 
 ## Stack
 
 - React + Vite, **plain JavaScript** (`.jsx` / `.js`, no TypeScript; the Vite template is `react`, not `react-ts`). No `tsc` in the build.
-- Tailwind CSS **4** with the Vite plugin `@tailwindcss/vite`. There is no `tailwind.config.js`; theme values live in `src/index.css`.
+- Tailwind CSS **4** with the Vite plugin `@tailwindcss/vite`. There is no `tailwind.config.js`; the design tokens live in the `@theme` block in `src/index.css`, which is a verbatim copy of `design.md`. If a token changes, change both in the same commit.
 - React Router for navigation
-- react-leaflet + OpenStreetMap tiles for the map. Import `leaflet/dist/leaflet.css` once in `src/main.jsx`, fix the default marker icons (Vite breaks their paths), and remember Leaflet wants `[latitude, longitude]`. Default map center is Košice, `[48.7164, 21.2611]`. Use `100dvh`, not `100vh`, for full-height maps. The app stays a web app wrapped with Capacitor, so Leaflet stays; if it ever becomes React Native, the map must be replaced (react-leaflet does not run there).
-- No Google API key and no Google API calls until the team decides which Google API is needed and why (each has separate billing and key restrictions). Navigation to a spot is a plain Google Maps or Waze link and needs no key. Anything starting with `VITE_` is public in the browser, so never put a secret in it.
+- Map: react-leaflet. The target tiles are CARTO Positron with `grayscale(1)` on the tile pane and the attribution "© OpenStreetMap contributors, © CARTO" always visible (see `design.md`, Map); the code still uses OpenStreetMap tiles until the map is migrated. Import `leaflet/dist/leaflet.css` once (today in `SpotMap.jsx`), fix the default marker icons (Vite breaks their paths), and remember Leaflet wants `[latitude, longitude]`. Default map center is Košice, `[48.7164, 21.2611]`. Use `100dvh`, not `100vh`, for full-height maps. The app stays a web app wrapped with Capacitor, so Leaflet stays; if it ever becomes React Native, the map must be replaced (react-leaflet does not run there).
+- Address search uses the Mapy.com Suggest API with the key in `VITE_MAPY_API_KEY`. Anything starting with `VITE_` is public in the browser, so restrict the key to our domains in the Mapy.com account, and never put a secret in a `VITE_` variable, paste the key into a chat or commit it.
+- No Google API key and no Google API calls until the team decides which Google API is needed and why (each has separate billing and key restrictions). Navigation to a spot is a plain Google Maps link with the exact location and needs no key.
 - `fetch` for API calls (no axios, no TanStack Query yet)
 - Backend API: every route lives under `/api` (for example `GET /api/health`). The base URL comes from `VITE_API_URL`. In development, forward `/api` to the FastAPI server with `server.proxy` in `vite.config.js` instead of fighting CORS. Field names in API data are `snake_case` (FastAPI default); mock data uses the same names, so switching from mock to real is one change inside `src/api/`. Agree the JSON shape with the API owner before building on it.
-- The shared `.env` file lives in the repo root, not in `frontend/`. `vite.config.js` therefore sets `envDir:'..'`. Only variables starting with `VITE_` reach the browser.
-- Approved dependencies: `react`, `react-dom`, `react-router-dom`, `tailwindcss`, `@tailwindcss/vite`, `leaflet`, `react-leaflet`. Do NOT add any other dependency without asking first.
+- Environment: variables live in `frontend/.env`. Only variables starting with `VITE_` reach the browser. `.env.example` lists every variable without values. After changing `.env`, restart `npm run dev`.
+- Approved dependencies: `react`, `react-dom`, `react-router-dom`, `tailwindcss`, `@tailwindcss/vite`, `leaflet`, `react-leaflet`, `@phosphor-icons/react` (icons) and a self-hosted Inter font package (latin-ext subset, weights 500 to 800; the exact package is chosen in the PR that adds it). Dev tools: `vite`, `@vitejs/plugin-react`, `oxlint`. Do NOT add any other dependency without asking first.
+
+## Design rules (short version of design.md)
+
+- Tokens or nothing: use only classes generated from the `@theme` block. No raw hex or `rgb()`, no arbitrary Tailwind values such as `p-[13px]`. Tailwind's default palette, text sizes, radii and shadows are emptied, so a class like `bg-gray-100`, `text-sm` or `shadow` produces no CSS.
+- One orange (`accent`). One orange button per screen; never orange text or a solid orange card.
+- Flat: no shadows, gradients, blur or glass. Separate surfaces with a 1px `border` and whitespace.
+- Always name the color on a border (`border border-border`). Focus is `focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink`, never `ring` and never bare `focus:`.
+- Icons: Phosphor, Bold weight, imported by name. No emoji as icons, no other icon set.
+- Every amount of money uses a `num-*` text style and `formatPrice`.
 
 ## Project structure
 
@@ -35,7 +51,7 @@ Where does a new file go? If it knows nothing about parking (a button), it goes 
 - Components are small and do one thing. If a file grows past ~150 lines, propose a split.
 - Prefer the simplest solution that works. No clever abstractions, no premature optimization.
 - No API calls or business logic inside JSX components: put them in `api/` and `hooks/`.
-- Every screen handles three states: loading, error, empty.
+- Every screen handles four states: loading, error, empty and offline (see `design.md`, Screen patterns and states).
 - Mobile-first. Build for 390px width first, then scale up. Check every screen at 390px.
 - Semantic HTML, visible focus states, text contrast at least 4.5:1, touch targets at least 44px.
 - UI text (Slovak) lives in one dictionary file, `src/lib/strings.js`, never inline in components.
@@ -46,5 +62,6 @@ Where does a new file go? If it knows nothing about parking (a button), it goes 
 ## Workflow
 
 - Commands (run inside `frontend/`): `npm run dev`, `npm run build`, `npm run lint`
+- After `git pull`, run `npm install` if `package.json` or `package-lock.json` changed.
 - Before saying a task is done: run lint and build, and report what you checked.
 - Git and PR rules are in the root `../CLAUDE.md`.
