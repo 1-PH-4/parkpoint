@@ -7,7 +7,6 @@ from sqlalchemy.exc import SQLAlchemyError
 from app.db.session import get_db
 from app.main import app
 
-
 client = TestClient(app)
 
 
@@ -16,6 +15,28 @@ def test_health():
 
     assert response.status_code == 200
     assert response.json() == {"status": "ok"}
+
+
+def test_cors_preflight_allows_local_frontend():
+    response = client.options(
+        "/api/health",
+        headers={
+            "Origin": "http://localhost:5173",
+            "Access-Control-Request-Method": "POST",
+        },
+    )
+
+    assert response.status_code == 200
+    assert response.headers["access-control-allow-origin"] == "http://localhost:5173"
+
+
+def test_cors_does_not_allow_unknown_origin():
+    response = client.get(
+        "/api/health",
+        headers={"Origin": "https://untrusted.example"},
+    )
+
+    assert "access-control-allow-origin" not in response.headers
 
 
 def test_database_health():
