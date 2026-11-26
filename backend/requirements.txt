@@ -4,8 +4,6 @@ sqlalchemy[asyncio]
 asyncpg
 alembic
 pydantic-settings
-pyjwt
-argon2-cffi
 geoalchemy2
 scikit-learn
 joblib
